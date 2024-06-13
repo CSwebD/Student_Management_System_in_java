@@ -9,6 +9,9 @@ public class School {
     private static int totalMoneyEarned;
     private static int totalMoneySpent;
 
+    /**
+     * Default constructor to initialize the lists of teachers and students.
+     */
     public School() {
         this.teachers = new ArrayList<>();
         this.students = new ArrayList<>();
@@ -16,51 +19,79 @@ public class School {
         totalMoneySpent = 0;
     }
 
-    public School(List<Teacher> teachers, List<Student> students){
-        this.teachers = teachers;
-        this.students = students;
+    /**
+     * Parameterized constructor to initialize the school with lists of teachers and students.
+     * @param teachers List of teachers.
+     * @param students List of students.
+     */
+    public School(List<Teacher> teachers, List<Student> students) {
+        this.teachers = teachers != null ? teachers : new ArrayList<>();
+        this.students = students != null ? students : new ArrayList<>();
         totalMoneyEarned = 0;
         totalMoneySpent = 0;
     }
 
-    // the list of teachers in the school
+    /**
+     * Gets the list of teachers in the school.
+     * @return List of teachers.
+     */
     public List<Teacher> getTeachers() {
         return teachers;
     }
-    
-    // add teachers in the school
+
+    /**
+     * Adds a teacher to the school.
+     * @param teacher The teacher to be added.
+     */
     public void addTeacher(Teacher teacher) {
         teachers.add(teacher);
     }
 
-    // the list of students in the school
+    /**
+     * Gets the list of students in the school.
+     * @return List of students.
+     */
     public List<Student> getStudents() {
         return students;
     }
 
-    // add students in the school
+    /**
+     * Adds a student to the school.
+     * @param student The student to be added.
+     */
     public void addStudent(Student student) {
         students.add(student);
     }
 
-    // return the total earned by the school
+    /**
+     * Gets the total money earned by the school.
+     * @return Total money earned.
+     */
     public int getTotalMoneyEarned() {
         return totalMoneyEarned;
     }
 
-    // adds the total money earned by the school
+    /**
+     * Updates the total money earned by the school.
+     * @param moneyEarned Money earned to be added.
+     */
     public static void updateTotalMoneyEarned(int moneyEarned) {
         totalMoneyEarned += moneyEarned;
     }
 
-    // the total money spent by the school
+    /**
+     * Gets the total money spent by the school.
+     * @return Total money spent.
+     */
     public int getTotalMoneySpent() {
         return totalMoneySpent;
     }
 
-    // update the money that is spent by the school which
-    // is the salary given by the school to its teachers
+    /**
+     * Updates the total money spent by the school.
+     * @param moneySpent Money spent to be added.
+     */
     public static void updateTotalMoneySpent(int moneySpent) {
         totalMoneySpent += moneySpent;
-    }    
+    }
 }

@@ -1,48 +1,75 @@
 package school.management.system;
 
 /**
- * This class is responsible for keeping the track of
- * teacher's name, id and salary.
+ * This class represents a teacher in the school system.
+ * It keeps track of teacher's ID, name, salary, and salary earned.
  */
-
 public class Teacher {
     private int id;
     private String name;
     private int salary;
     private int salaryEarned;
 
-    public Teacher(int id, String name, int salary){
+    /**
+     * Constructor to create a new teacher with initial values.
+     * @param id Unique identifier for the teacher.
+     * @param name Name of the teacher.
+     * @param salary Salary of the teacher.
+     */
+    public Teacher(int id, String name, int salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
-        this.salaryEarned = 0;
+        this.salaryEarned = 0; // Initialize salary earned to 0
     }
 
-    // return id, name and salary for the teacher
-    public int getId(){
+    /**
+     * Getter method to retrieve the teacher's ID.
+     * @return Teacher's ID.
+     */
+    public int getId() {
         return id;
     }
 
-    public String getName(){
+    /**
+     * Getter method to retrieve the teacher's name.
+     * @return Teacher's name.
+     */
+    public String getName() {
         return name;
     }
 
-    public int getSalary(){
+    /**
+     * Getter method to retrieve the teacher's salary.
+     * @return Teacher's salary.
+     */
+    public int getSalary() {
         return salary;
     }
 
-    // set the salary
-    public void setSalary(int salary){
+    /**
+     * Setter method to set the teacher's salary.
+     * @param salary New salary to be set.
+     */
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public void receiveSalary(int salary){ 
-        salaryEarned += salary;
-        School.updateTotalMoneySpent(salary);
+    /**
+     * Method for the teacher to receive their salary.
+     * @param salary Salary amount to be received.
+     */
+    public void receiveSalary(int salary) {
+        salaryEarned += salary; // Add received salary to salaryEarned
+        School.updateTotalMoneySpent(salary); // Update total money spent by the school
     }
 
+    /**
+     * Override of toString method to provide a string representation of the teacher object.
+     * @return String representation of the teacher's name and total salary earned.
+     */
     @Override
-    public String toString(){
-        return "Name to the Teacher: " + name + "Total salary earned so far $" + salaryEarned;
+    public String toString() {
+        return "Teacher's name: " + name + ", Total salary earned so far: $" + salaryEarned;
     }
 }
