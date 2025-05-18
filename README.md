@@ -1,7 +1,5 @@
 # Student Management System
 
-![Student Management System Screenshot](Student_Management_System_screenshot.png)
-
 ## Description
 
 Student Management System is a Java Swing-based desktop application designed to help educational institutions manage student data, courses, and faculty. It provides a clear and intuitive interface for adding, editing, viewing, and reporting on student and teacher records.
